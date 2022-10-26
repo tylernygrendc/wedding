@@ -1,0 +1,111 @@
+article {
+    display: block;
+}
+
+article section .banner {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
+
+article section .banner img {
+    display: block;
+    object-fit: cover;
+    object-position: bottom;
+    width: 100vw;
+    height: 125%;
+    position: absolute;
+    inset: 0 0 auto 0;
+}
+article section .banner .overlay {
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: rgba(0,0,0,0.25);
+}
+
+article section .banner h2 {
+    position: absolute;
+    inset: auto auto 0 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0;
+    padding: 16px;
+    font-family: "Dawning of a New Day", cursive;
+    font-size: 2.75em;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    text-align: right;
+}
+
+article section .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    font-family: "EB Garamond";
+    font-size: 1.15rem;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: justify;
+    text-shadow: var(--text-shadow);
+}
+
+article section .details div {
+    max-width: 50ch;
+    flex-basis: 1;
+}
+
+article section .details div h3 {
+    text-align: center;
+}
+
+article section .details div a {
+    color: #ffd6c7;
+}
+
+article section .details .card {
+    max-width: 300px;
+    margin: 2rem;
+    border: 2px solid var(--background-text-color);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+article section .details .card img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+    border-radius: 4px 4px 0px 0px;
+}
+
+article section .details .card a {
+    width: 100%;
+    text-decoration: none;
+}
+
+article section .details .card a button{
+    margin: 16px auto;
+}
+
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (min-width: 800px) {
+
+}

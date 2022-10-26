@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details | Nygren-Kocsis Wedding</title>
+  <link rel="shortcut icon" href="./assets/favicon/favicon--black.svg" type="image/xml+svg" media="(prefers-color-scheme: light)">
+  <link rel="shortcut icon" href="./assets/favicon/favicon--white.svg" type="image/xml+svg" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/details.css">
+  <link rel="stylesheet" href="./css/atcb.css">
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script defer src="./js/details.js"></script>
+</head>
+
+<body>
+
+    <nav>
+
+        <div id="menuIcon" class="material-icons">menu</div>
+        
+        <ul id="navMenu" class="hidden">
+            <li><a href="./"><i class="material-icons">mark_email_read</i><span>RSVP</span></a></li>
+            <li><a href="./details#venue"><i class="material-icons">place</i><span>Location & Venue</span></a></li>
+            <li><a href="./details#menu"><i class="material-icons">wine_bar</i><span>Wine List & Menu</span></a></li>
+            <li><a href="./details#music"><i class="material-icons">music_note</i><span>Music & Entertainment</span></a></li>
+            <li><a href="./details#attire"><i class="material-icons">dry_cleaning</i><span>Recommended Attire</span></a></li>
+            <li><a href="./details#hotel"><i class="material-icons">hotel</i><span>Hotels & Nearby Food<span></a></li>
+            <li><a href="./registry"><i class="material-icons">loyalty</i><span>Gift Registry</span></a></li>
+          <li class="atcb" style="display:none;">
+            {
+                "name":"Tyler and Barb's Wedding",
+                "description":"",
+                "startDate":"2023-07-16",
+                "endDate":"2023-07-16",
+                "startTime":"14:00",
+                "endTime":"18:00",
+                "location":"6588 Pollock Rd, Convoy, OH 45832, USA",
+                "label":"Add to Calendar",
+                "options":[
+                  "Apple",
+                  "Google",
+                  "Microsoft365"
+                ],
+                "timeZone":"America/New_York",
+                "trigger":"click",
+                "inline":true,
+                "listStyle":"modal",
+                "iCalFileName":"Reminder-Event"
+              }
+          </li>
+        </ul>
+    
+      </nav>
+
+      <article>
+        <section id="venue">
+            <div class="banner">
+                <picture>
+                    <source srcset="">
+                    <source media="screen and (max-width: 800px) and (orientation: landscape)" srcset="./assets/details/venue/landscape/small.jpeg">
+                    <source media="screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape)" srcset="./assets/details/venue/landscape/medium.jpeg">
+                    <source media="screen and (min-width: 1200px) and (orientation: landscape)" srcset="./assets/details/venue/landscape/large.jpeg">
+                    <img src="./assets/details/venue/square/small.jpeg" alt="The Olde 1884 Church" loading="lazy">
+                </picture>
+                <div class="overlay"></div>
+                <h2>Location & Venue</h2>
+            </div>
+            <div class="details">
+                <div>
+                    <p>Our venue, The Olde 1884 Church, is located at Lincoln Ridge Farms just 10 miles west of our home in Van Wert, Ohio. Lincoln Ridge is a local favorite for strawberry, peach, and pumpkin picking throughout the year. The Olde Church was in active use by a congregation for more than 90 years, but now serves as a dedicated wedding venue. Outside, it features a large platform with a wheelchair accessible ramp. Inside, enjoy its high ceilings, tall windows, and - in July - modern air conditioning. Both our ceremony and reception will be held at this location.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/details/outside/square/small.jpeg" loading="lazy" alt="Venue Exterior">
+                    <a href="https://goo.gl/maps/d2QvcSfzudKbd6a98" target="_blank"><button><i class="material-icons">map</i>View in Maps</button></a>
+                </div>
+            </div>
+        </section>
+        <section id="menu">
+            <div class="banner">
+                <picture>
+                    <source srcset="">
+                    <source media="screen and (max-width: 800px) and (orientation: landscape)" srcset="./assets/details/menu/landscape/small.jpeg">
+                    <source media="screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape)" srcset="./assets/details/menu/landscape/medium.jpeg">
+                    <source media="screen and (min-width: 1200px) and (orientation: landscape)" srcset="./assets/details/menu/landscape/large.jpeg">
+                    <img src="./assets/details/menu/square/small.jpeg" alt="Wine and Cheeses" loading="lazy">
+                </picture>
+                <div class="overlay"></div>
+                <h2>Menu & Wine</h2>
+            </div>
+            <div class="details">
+                <div>
+                    <p>Boards of cheeses, fruits, sweets, and spreads will be at the center of each table. In addition, we will be featuring a variety of red and white wines. Try something new at every table! Our guests preferring soft drinks are welcome to a selection of sparkling juices, sodas, and, of course, ice-cold water. Guests with dietary restrictions should contact us directly so we can make accommodations. Gluten-free, vegetarian, and vegan options will be available.</p>
+                </div>
+            </div>
+        </section>
+        <section id="music">
+            <div class="banner">
+                <picture>
+                    <source srcset="">
+                    <source media="screen and (max-width: 800px) and (orientation: landscape)" srcset="./assets/details/music/landscape/small.jpeg">
+                    <source media="screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape)" srcset="./assets/details/music/landscape/medium.jpeg">
+                    <source media="screen and (min-width: 1200px) and (orientation: landscape)" srcset="./assets/details/music/landscape/large.jpeg">
+                    <img src="./assets/details/music/square/small.jpeg" alt="1950s Jazz Band" loading="lazy">
+                </picture>
+                <div class="overlay"></div>
+                <h2>Music</h2>
+            </div>
+            <div class="details">
+                <div>
+                    <p>We are very excited to host The Background Jazz Trio. This group performs throughout the Midwest for private and corporate events, as well and many weddings each year. They are comprised of the finest jazz musicians in the region and perform jazz classics from the 1920s-60s. Samples of their performance are available here, on YouTube, and at their website. As they play, enjoy a variety of tabletop and outdoor games. We will have corn-hole, cards, and tic-tac-toe scattered throughout the venue.</p>
+                </div>
+                <div class="card">
+                    <iframe height="300" src="https://www.youtube.com/embed/tAafBLQa8j4" title="Background Jazz Trio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 4px;" allowfullscreen></iframe>
+                    <a href="https://www.backgroundjazz.com/" target="_blank"><button><i class="material-icons">open_in_new</i>Visit Website</button></a>
+                </div>
+            </div>
+        </section>
+        <section id="attire">
+            <div class="banner">
+                <picture>
+                    <source srcset="">
+                    <source media="screen and (max-width: 800px) and (orientation: landscape)" srcset="./assets/details/attire/landscape/small.jpeg">
+                    <source media="screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape)" srcset="./assets/details/attire/landscape/medium.jpeg">
+                    <source media="screen and (min-width: 1200px) and (orientation: landscape)" srcset="./assets/details/attire/landscape/large.jpeg">
+                    <img src="./assets/details/attire/square/small.jpeg" alt="Semiformal Attire" loading="lazy">
+                </picture>
+                <div class="overlay"></div>
+                <h2>Recommended Attire</h2>
+            </div>
+            <div class="details">
+                <div>
+                    <p>Our wedding is a semiformal event. For men, we recommend chinos, khakis, or comfortable slacks paired with a button-up shirt. Neck ties are welcome, but not required. For women, we recommend a summer dress and comfortable shoes. We ask only that you not wear white, lest you face the wrath of the bride. Groomsmen will be wearing black suits, while bridesmaids will be wearing sage dresses.</p>
+                </div>
+            </div>
+        </section>
+        <section id="hotel">
+            <div class="banner">
+                <picture>
+                    <source srcset="">
+                    <source media="screen and (max-width: 800px)  and (orientation: landscape)" srcset="./assets/details/hotel/landscape/small.jpeg">
+                    <source media="screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape)" srcset="./assets/details/hotel/landscape/medium.jpeg">
+                    <source media="screen and (min-width: 1200px) and (orientation: landscape)" srcset="./assets/details/hotel/landscape/large.jpeg">
+                    <img src="./assets/details/hotel/square/small.jpeg" alt="Holiday Inn Express room" loading="lazy">
+                </picture>
+                <div class="overlay"></div>
+                <h2>Hotels & Dining</h2>
+            </div>
+            <div class="details">
+                <div>
+                    <p>For those of our guests planning to stay overnight on either the 15<sup>th</sup> or 16<sup>th</sup>, we recommend Van Wert's Holiday Inn Express. This hotel is just an eight minute drive from the venue and is surrounded by several dining options. During your stay, be sure to visit our local favorites for breakfast and dinner: the <a href="https://g.page/133bistro?share" target="_blank">133 Bistro</a> and <a href="https://goo.gl/maps/ggGUda7kxPFWhKHV7" target="_blank">The Edition</a>. If you find yourself in town the night of the 15<sup>th</sup>, join us after our rehearsal dinner at <a href="https://g.page/BrewNations?share" target="_blank">Brew Nation</a>, in Celina, Ohio.</p>
+                </div>
+                <div class="card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3016.5271676459124!2d-84.58310188467122!3d40.8822496793137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883e6b18d046dca5%3A0x46445e16616001b3!2sHoliday%20Inn%20Express%20%26%20Suites%20Van%20Wert%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sus!4v1666301837077!5m2!1sen!2sus" title="" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a href="https://goo.gl/maps/fc3d9CejMUYpWqRS7" target="_blank"><button><i class="material-icons">map</i>View in Maps</button></a>
+                </div>
+            </div>
+        </section>
+      </article>
+
+</body>

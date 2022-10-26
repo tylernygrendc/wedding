@@ -1,0 +1,234 @@
+:root {
+  --primary-color: #838f70;
+  --accent-color: #d88f75;
+  --background-color: #838f70;
+  --primary-text-color: #fff8e7;
+  --accent-text-color: #fff8e7;
+  --background-text-color: #fff8e7;
+  --surface-color: #fff8e7;
+  --surface-text-color: rgb(33, 37, 40);
+  --box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  --box-shadow--elevated: 0 0 6px rgba(0, 0, 0, 0.4);
+  --text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.background {
+  background-color: var(--background-color);
+  color: var(--background-text-color);
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+.accent {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-size: 1rem;
+  font-family: "EB Garamond", serif;
+  line-height: 1.5;
+
+  background-color: var(--background-color);
+  color: var(--background-text-color);
+}
+
+.material-icons,
+button,
+nav ul li {
+  cursor: pointer;
+}
+
+/* PRIMARY NAVIGATION */
+
+nav {
+  z-index: 10;
+  position: fixed;
+  inset: 0 auto auto 16px;
+
+  height: 54px;
+  width: 72px;
+
+  display: block;
+
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+
+  border-radius: 0 0 6px 6px;
+  background-color: var(--background-color);
+  color: var(--background-text-color);
+  box-shadow: var(--box-shadow);
+}
+
+nav #menuIcon {
+  z-index: 15;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 6px 6px;
+  font-size: 32px;
+  text-shadow: var(--text-shadow);
+}
+
+nav #menuIcon:hover {
+  transition: 250ms;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: fixed;
+  inset: 0;
+
+  margin: 0;
+  padding: 64px 1rem 1rem 38px;
+  background-color: var(--background-color);
+  color: var(--background-text-color);
+}
+
+nav ul li {
+  line-height: 2;
+  list-style: none;
+}
+
+nav ul li a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  color: var(--background-text-color);
+}
+
+nav ul li a:hover span,
+nav ul li a:focus span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* UI */
+
+button,
+input[type=button] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.35rem 0.5rem !important;
+  gap: 0.35rem !important;
+  font-family: "EB Garamond", serif !important;
+  line-height: 1.5 !important;
+  font-size: 1.15rem !important;
+  text-transform: uppercase !important;
+  text-shadow: var(--text-shadow) !important;
+  letter-spacing: 2px !important;
+  border: 2px solid var(--background-text-color) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  background-color: var(--background-color) !important;
+  color: var(--background-text-color) !important;
+}
+
+button:focus,
+button:hover {
+  outline: 2px solid var(--accent-color);
+}
+
+.atcb-icon-trigger {
+  fill: var(--background-text-color) !important;
+}
+
+.atcb-button {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.atcb-button-wrapper {
+  padding: 0 !important;
+}
+
+label {
+  font-size: 1.15em;
+}
+
+.textInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.25em 0;
+}
+
+.textInput input {
+  width: 100%;
+}
+
+input {
+  font-family: "EB Garamond", serif;
+  font-size: 1.15em;
+  font-weight: 400;
+  margin: 0.25em 0;
+  padding: 0.75em 0.5em;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  background-color: #fff8e7;
+  color: #3c3e43;
+}
+
+select {
+  font-family: "EB Garamond", serif;
+  font-size: 1.15em;
+  font-weight: 400;
+  margin: 0.25em 0;
+  padding: 0.5em 0.5em;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0;
+  background-color: #fff8e7;
+  color: #3c3e43;
+}
+
+input:focus,
+select:focus {
+  outline: 0;
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 800px) {
+  html,
+  body{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html,
+  body{
+    font-size: 0.9rem;
+  }
+}

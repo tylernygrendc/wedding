@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date | Nygren-Kocsis Wedding</title>
+  <link rel="shortcut icon" href="./assets/favicon/favicon--black.svg" type="image/xml+svg" media="(prefers-color-scheme: light)">
+  <link rel="shortcut icon" href="./assets/favicon/favicon--white.svg" type="image/xml+svg" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/rsvp.css">
+  <link rel="stylesheet" href="./css/atcb.css">
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script defer src="./js/rsvp.js"></script>
+</head>
+
+<body>
+
+  <nav>
+
+    <div id="menuIcon" class="material-icons">menu</div>
+    
+    <ul id="navMenu" class="hidden">
+      <li><a href="./"><i class="material-icons">mark_email_read</i><span>RSVP</span></a></li>
+      <li><a href="./details#venue"><i class="material-icons">place</i><span>Location & Venue</span></a></li>
+      <li><a href="./details#menu"><i class="material-icons">wine_bar</i><span>Wine List & Menu</span></a></li>
+      <li><a href="./details#music"><i class="material-icons">music_note</i><span>Music & Entertainment</span></a></li>
+      <li><a href="./details#attire"><i class="material-icons">dry_cleaning</i><span>Recommended Attire</span></a></li>
+      <li><a href="./details#hotel"><i class="material-icons">hotel</i><span>Hotels & Nearby Food<span></a></li>
+      <li><a href="./registry.html"><i class="material-icons">loyalty</i><span>Gift Registry</span></a></li>
+      <li class="atcb" style="display:none;">
+        {
+          "name":"Tyler and Barb's Wedding",
+          "description":"",
+          "startDate":"2023-07-16",
+          "endDate":"2023-07-16",
+          "startTime":"14:00",
+          "endTime":"18:00",
+          "location":"6588 Pollock Rd, Convoy, OH 45832, USA",
+          "label":"Add to Calendar",
+          "options":[
+            "Apple",
+            "Google",
+            "Microsoft365"
+          ],
+          "timeZone":"America/New_York",
+          "trigger":"click",
+          "inline":true,
+          "listStyle":"modal",
+          "iCalFileName":"Reminder-Event"
+        }
+      </li>
+    </ul>
+
+  </nav>
+
+  <article>
+
+    <picture>
+      <source media="screen and (max-width: 400px)"srcset="./assets/cover/cover-small.jpg">
+      <source media="screen and (min-width: 400px) and (max-width: 800px)"srcset="./assets/cover/cover-medium.jpg">
+      <source media="screen and (min-width: 800px)" srcset="./assets/cover/cover-large.jpg">
+      <img id="cover" src="./assets/cover/cover-large.jpg" alt="">
+    </picture>
+
+    <main>
+
+      <div class="spacer"></div>
+
+      <h1>Save the Date</h1>
+
+      <form id="rsvpForm">
+
+        <section id="saveTheDate">
+          <i>Tyler Nygren &<br>Barbora Kocsisova</i>
+          <p>Sunday July 16th, 2023</p>
+          <p>2PM | Convoy, Ohio</p>
+        </section>
+
+        <section id="claimYourInvitation" class="hidden">
+          <!-- Please type your name as it appears on your invitation. -->
+          <div class="textInput">
+            <label for="nameInput">Full Name (as printed on invitation)</label>
+            <input type="text" id="nameInput" name="name" autocomplete="name" placeholder="John Smith">
+          </div>
+        </section>
+
+        <section id="updateStatus" class="hidden">
+          <img class="loading" src="./assets/loading.svg" alt="loading animation" height="98px" width="98px" load="lazy">
+          <!-- Please indicate which members of your party plan to attend: -->
+          <div id="selectionList"></div>
+        </section>
+
+        <section id="submissionConfirmation" class="hidden">
+          <img class="loading" src="./assets/loading.svg" alt="loading animation" height="98px" width="98px" load="lazy">
+          <!-- Thank you for your response! -->
+        </section>
+
+        <section id="nextSteps" class="hidden">
+          <a href="./details.html"><button type="button"><i class="material-icons">fact_check</i>Event Details</button></a>
+          <a href="./details.html?anchor=hotels"><button type="button"><i class="material-icons">hotel</i>Hotels & Nearby Food</button></a>
+          <a href="./registry.html"><button type="button"><i class="material-icons">loyalty</i>Gift Registry</button></a>
+          <div class="atcb" style="display:none;">
+            {
+              "name":"Tyler and Barb's Wedding",
+              "description":"",
+              "startDate":"2023-07-16",
+              "endDate":"2023-07-16",
+              "startTime":"14:00",
+              "endTime":"18:00",
+              "location":"6588 Pollock Rd, Convoy, OH 45832, USA",
+              "label":"Add to Calendar",
+              "options":[
+                "Apple",
+                "Google",
+                "Microsoft365"
+              ],
+              "timeZone":"America/New_York",
+              "trigger":"click",
+              "inline":true,
+              "listStyle":"modal",
+              "iCalFileName":"Reminder-Event"
+            }
+          </div>
+        </section>
+      </form>
+
+      <div id="formActions">
+        <button id="formBackButton" class="hidden" type="button">Back</button>
+        <button id="formSubmitButton" type="button">Start RSVP</button>
+      </div>
+
+      <div class="spacer"></div>
+
+    </main>
+
+  </article>
+</body>
+</html>

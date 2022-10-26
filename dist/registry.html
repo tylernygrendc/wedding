@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Registry | Nygren-Kocsis Wedding</title>
+  <link rel="shortcut icon" href="./assets/favicon/favicon--black.svg" type="image/xml+svg" media="(prefers-color-scheme: light)">
+  <link rel="shortcut icon" href="./assets/favicon/favicon--white.svg" type="image/xml+svg" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/registry.css">
+  <link rel="stylesheet" href="./css/atcb.css">
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script defer src="./js/registry.js"></script>
+</head>
+
+<body>
+
+  <nav>
+
+    <div id="menuIcon" class="material-icons">menu</div>
+    
+    <ul id="navMenu" class="hidden">
+      <li><a href="./"><i class="material-icons">mark_email_read</i><span>RSVP</span></a></li>
+      <li><a href="./details#venue"><i class="material-icons">place</i><span>Location & Venue</span></a></li>
+      <li><a href="./details#menu"><i class="material-icons">wine_bar</i><span>Wine List & Menu</span></a></li>
+      <li><a href="./details#music"><i class="material-icons">music_note</i><span>Music & Entertainment</span></a></li>
+      <li><a href="./details#attire"><i class="material-icons">dry_cleaning</i><span>Recommended Attire</span></a></li>
+      <li><a href="./details#hotel"><i class="material-icons">hotel</i><span>Hotels & Nearby Food<span></a></li>
+      <li><a href="./registry"><i class="material-icons">loyalty</i><span>Gift Registry</span></a></li>
+      <li class="atcb" style="display:none;">
+        {
+          "name":"Tyler and Barb's Wedding",
+          "description":"",
+          "startDate":"2023-07-16",
+          "endDate":"2023-07-16",
+          "startTime":"14:00",
+          "endTime":"18:00",
+          "location":"6588 Pollock Rd, Convoy, OH 45832, USA",
+          "label":"Add to Calendar",
+          "options":[
+            "Apple",
+            "Google",
+            "Microsoft365"
+          ],
+          "timeZone":"America/New_York",
+          "trigger":"click",
+          "inline":true,
+          "listStyle":"modal",
+          "iCalFileName":"Reminder-Event"
+        }
+      </li>
+    </ul>
+
+  </nav>
+
+
+  <article>
+    <main>
+
+      <div class="gift">
+        <img src="./assets/registry/piggybank-1.jpg" loading="lazy" alt="image of a piggy bank">
+        <div>
+          <h2>"In Sickness" Fund</h2>
+          <button name="security">Select Amount</button>
+        </div>
+      </div>
+
+      <div class="gift">
+        <img src="./assets/registry/piggybank-2.jpg" loading="lazy" alt="image of a piggy bank">
+          <div>
+            <h2>"In Health" Fund</h2>
+            <button name="adventure">Select Amount</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/backpack.jpg" loading="lazy" alt="image of a backpack">
+          <div>
+            <h2>Backpack for Barb</h2>
+            <button value="99.99" name="a backpack">Gift | $99.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/backpack.jpg" loading="lazy" alt="image of a backpack">
+          <div>
+            <h2>Backpack for Tyler</h2>
+            <button value="99.99" name="a backpack">Gift | $99.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/carryon.jpg" loading="lazy" alt="image of a small suitcase">
+          <div>
+            <h2>Carry-On for Barb</h2>
+            <button value="169.99" name="luggage">Gift | $169.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/carryon.jpg" loading="lazy" alt="image of a small suitcase">
+          <div>
+            <h2>Carry-On for Tyler</h2>
+            <button value="169.99" name="luggage">Gift | $169.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/mediumchecked.jpg" loading="lazy" alt="image of a large suitcase">
+          <div>
+            <h2>Luggage for Barb</h2>
+            <button value="184.99" name="luggage">Gift | $184.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/mediumchecked.jpg" loading="lazy" alt="image of a large suitcase">
+          <div>
+            <h2>Luggage for Tyler</h2>
+            <button value="184.99" name="luggage">Gift | $184.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/toiletrybag.jpg" loading="lazy" alt="image of a toiletry bag">
+          <div>
+            <h2>Toiletry Bag for Barb</h2>
+            <button value="34.95" name="a toiletry bag">Gift | $34.95</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/toiletrybag.jpg" loading="lazy" alt="image of a toiletry bag">
+          <div>
+            <h2>Toiletry Bag for Tyler</h2>
+            <button value="34.95" name="a toiletry bag">Gift | $34.95</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/foodprocessor.jpg" loading="lazy" alt="image of a food processor">
+          <div>
+            <h2>Food Processor</h2>
+            <button value="69.00" name="a food processor">Gift | $69.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/mixer.jpg" loading="lazy" alt="image of a stand mixer">
+          <div>
+            <h2>Stand Mixer</h2>
+            <button value="329.99" name="a stand mixer">Gift | $329.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/immersionblender.jpg" loading="lazy" alt="image of an immersion blender">
+          <div>
+            <h2>Immersion Blender</h2>
+            <button value="59.99" name="an immersion blender">Gift | $59.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/ricecooker.jpg" loading="lazy" alt="image of pressure cooker">
+          <div>
+            <h2>Pressure Cooker</h2>
+            <button value="89.99" name="a pressure cooker">Gift | $89.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/magicbullet.jpg" loading="lazy" alt="image of a magic bullet blender">
+          <div>
+            <h2>Magic Bullet Blender</h2>
+            <button value="24.97" name="a blender">Gift | $24.97</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/toasteroven.jpg" loading="lazy" alt="image of a toaster oven">
+          <div>
+            <h2>Toaster Oven</h2>
+            <button value="29.99" name="a toaster oven">Gift | $29.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/sodastream.jpg" loading="lazy" alt="image of a spakling water maker">
+          <div>
+            <h2>Sparkling Water Maker</h2>
+            <button value="99.99" name="spakling water">Gift | $99.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/spicerack.jpg" loading="lazy" alt="image of a cabinet organizer">
+          <div>
+            <h2>Cabinet Organizer (1)</h2>
+            <button value="49.99" name="cleanliness">Gift | $49.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/spicerack.jpg" loading="lazy" alt="image of a cabinet organizer">
+          <div>
+            <h2>Cabinet Organizer (2)</h2>
+            <button value="49.99" name="cleanliness">Gift | $49.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/flatware.jpg" loading="lazy" alt="image of ornate flatware">
+          <div>
+            <h2>Flatware Set</h2>
+            <button value="128.99" name="beautiful flatware">Gift | $128.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/babishknives.jpg" loading="lazy" alt="image of a knife set">
+          <div>
+            <h2>Knife Set</h2>
+            <button value="44.98" name="quality knives">Gift | $44.98</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/chefknife.jpg" loading="lazy" alt="image of a large knife">
+          <div>
+            <h2>Chef Knife</h2>
+            <button value="22.98" name="a chef knife">Gift | $22.98</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/cleaver.jpg" loading="lazy" alt="image of a large knife">
+          <div>
+            <h2>Cleaver Knife</h2>
+            <button value="29.99" name="a cleaver knife">Gift | $29.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/santukuknife.jpg" loading="lazy" alt="image of a knife">
+          <div>
+            <h2>Santoku Knife</h2>
+            <button value="18.99" name="a santoku knife">Gift | $18.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/margglasses.jpg" loading="lazy" alt="image of filled margarita glasses">
+          <div>
+            <h2>Margarita Glasses</h2>
+            <button value="18.99" name="margarita glasses">Gift | $18.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/martiniglasses.jpg" loading="lazy" alt="image of filled martini glasses">
+          <div>
+            <h2>Martini Glasses</h2>
+            <button value="39.99" name="martini glasses">Gift | $39.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/muleglasses.jpg" loading="lazy" alt="image of filled mule glasses">
+          <div>
+            <h2>Mule Glasses</h2>
+            <button value="27.99" name="mule glasses">Gift | $27.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/redwineglass.jpg" loading="lazy" alt="image of red wine glasses">
+          <div>
+            <h2>Red Wine Glasses</h2>
+            <button value="28.98" name="red wine glasses">Gift | $28.98</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/whitewineglass.jpg" loading="lazy" alt="image of white wine glasses">
+          <div>
+            <h2>White Wine Glasses</h2>
+            <button value="24.99" name="white wine glasses">Gift | $24.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/robes.jpg" loading="lazy" alt="image of waffle robes on different people">
+          <div>
+            <h2>Waffle Robe for Barb</h2>
+            <button value="129.00" name="a robe">Gift | $129.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/robes.jpg" loading="lazy" alt="image of waffle robes on different people">
+          <div>
+            <h2>Waffle Robe for Tyler</h2>
+            <button value="129.00" name="a robe">Gift | $129.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/eggchair.jpg" loading="lazy" alt="image of a large chair">
+          <div>
+            <h2>Egg Chair</h2>
+            <button value="375.99" name="an egg chair">Gift | $375.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/thermos.jpg" loading="lazy" alt="image of a soup thermos">
+          <div>
+            <h2>Soup Thermos for Barb</h2>
+            <button value="26.00" name="a thermos">Gift | $26.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/thermos.jpg" loading="lazy" alt="image of a soup thermos">
+          <div>
+            <h2>Soup Thermos for Tyler</h2>
+            <button value="26.00" name="a thermos">Gift | $26.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/firstaidkit.jpg" loading="lazy" alt="image of a cute first-aid kit">
+          <div>
+            <h2>First-Aid Kit</h2>
+            <button value="39.99" name="a first-aid kit">Gift | $39.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/fireplace.jpg" loading="lazy" alt="image of small fireplace">
+          <div>
+            <h2>Tabletop Fireplace</h2>
+            <button value="159.00" name="an outdoor fireplace">Gift | $159.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/bikerack.jpg" loading="lazy" alt="image of a bikerack">
+          <div>
+            <h2>Bike Rack</h2>
+            <button value="94.00" name="a bike rack">Gift | $94.00</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/aircompressor.jpg" loading="lazy" alt="image of air compressor">
+          <div>
+            <h2>Air Compressor</h2>
+            <button value="69.99" name="an air compressor">Gift | $69.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/pressurewasher.jpg" loading="lazy" alt="image of a pressure washer">
+          <div>
+            <h2>Pressure Washer</h2>
+            <button value="99.99" name="a pressure washer">Gift | $99.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/roomba.jpg" loading="lazy" alt="image of roomba vacuum at work">
+          <div>
+            <h2>Roomba Robot Vacuum</h2>
+            <button value="249.99" name="a robot vacuum">Gift | $249.99</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/shredder.jpg" loading="lazy" alt="image of a paper shredder">
+          <div>
+            <h2>Paper Shredder</h2>
+            <button value="31.89" name="a paper shredder">Gift | $31.89</button>
+          </div>
+        </div>
+
+        <div class="gift">
+          <img src="./assets/registry/steamer.jpg" loading="lazy" alt="image of a fabric steamer">
+          <div>
+            <h2>Fabric Steamer</h2>
+            <button value="69.99" name="a fabric steamer">Gift | $69.99</button>
+          </div>
+        </div>
+
+    </main>
+    <div id="topGradient"></div>
+  </article>
+
+  <div id="scrim" class="hidden"></div>
+
+  <div id="checkout" class="hidden">
+    <div class="close"><i class="material-icons">close</i></div>
+    <h2>Thank you for your gift!</h2>
+    <div class="textInput">
+      <label for="name">Who can we thank?</label>
+      <input id="name" type="text" name="name" autocomplete="name">
+    </div>
+    <!-- PayPal Button -->
+    <a id="redirect" href="" target="_blank"><button>Continue to PayPal<i class="material-icons">login</i></button></a>
+    <p>We are using PayPal as a safe and secure, account-free way to complete payments online.</p>
+  </div>
+
+</body>
