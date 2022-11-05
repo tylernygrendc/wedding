@@ -6,17 +6,17 @@ const __dirname = path.dirname(__filename);
 const pages = [
   "rsvp",
   "registry",
-  "details"
+  "details",
+  "dashboard"
 ]
 
 const config = {
   mode: 'development',
   watch: true,
-  entry: {
-    rsvp: './src/rsvp.js',
-    registry: './src/registry.js',
-    details: './src/details.js'
-  },
+  entry: pages.reduce((config, page) => {
+    config[page] = `./src/${page}.js`;
+    return config;
+  }, {}),
   output: {
     path: path.resolve(__dirname, 'dist/js'),
     filename: '[name].js'

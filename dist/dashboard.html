@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="./js/dashboard.js"></script>
+</head>
+<body>
+
+    <div id="functions" style="display: flex; flex-direction: row; align-items: center; gap: 8px; padding: 16px;">
+        <span style="flex-grow: 1;"></span>
+        <span>Run: </span>
+        <select name="function" id="functionSelector">
+            <option value="getAllGuests"></option>
+            <option value="getAttending"></option>
+            <option value="getPurchased"></option>
+        </select>
+        <button id="start">Start</button>
+        <span style="flex-grow: 1;"></span>
+    </div>
+
+    <table id="output"></table>
+
+</body>
+</html>
