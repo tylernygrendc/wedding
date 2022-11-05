@@ -5,22 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="./js/dashboard.js"></script>
+    <style>
+        #functions{
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 16px;
+        }
+        table {
+            border: solid 1px black;
+        }
+
+        thead {
+            text-transform: capitalize;
+            font-weight: bolder;
+        }
+        td {
+            border: solid 1px black;
+            padding: 2px;
+        }
+    </style>
 </head>
 <body>
 
-    <div id="functions" style="display: flex; flex-direction: row; align-items: center; gap: 8px; padding: 16px;">
+    <div id="functions">
         <span style="flex-grow: 1;"></span>
-        <span>Run: </span>
-        <select name="function" id="functionSelector">
-            <option value="getAllGuests"></option>
-            <option value="getAttending"></option>
-            <option value="getPurchased"></option>
+        <span>Function:</span>
+        <select id="functionSelector">
+            <option value="getAllGuests">getAllGuests()</option>
+            <option value="getAttending">getAttending()</option>
+            <option value="getNotAttending">getAttending(false)</option>
+            <option value="getPurchased">getPurchased()</option>
         </select>
-        <button id="start">Start</button>
+        <button id="start">Run</button>
         <span style="flex-grow: 1;"></span>
     </div>
 
-    <table id="output"></table>
+    <table id="output" style="border: 1px solid black"></table>
 
 </body>
 </html>
