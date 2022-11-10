@@ -229,6 +229,10 @@ async function getParty(name) {
       }
     });
 
+    party = party.map(guest => String(guest).toLowerCase());
+
+    console.log(party);
+
     if(party.length > 0) {
       querySnapshot = await getDocs(query(collection(db, "guests"), where("name", "in", party)));
         querySnapshot.forEach(doc => {
